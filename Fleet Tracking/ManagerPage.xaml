@@ -1,0 +1,105 @@
+﻿<Page x:Class="Fleet_Tracking.ManagerPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Fleet_Tracking"
+      mc:Ignorable="d" 
+      Title="ManagerPage" Margin="0,0,0,0">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Resources/action-asphalt-blur-315938.jpg"/>
+        </Grid.Background>
+        <Grid VerticalAlignment="Top" Height="60" >
+            <Grid.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowFrameColorKey}}" Opacity="0.62"/>
+            </Grid.Background>
+            <Image x:Name="image" HorizontalAlignment="Left" Height="77" Margin="36,0,0,0" VerticalAlignment="Top" Width="131" Source="Resources/Untitled.png" Stretch="Fill"/>
+            <Label x:Name="label" Content="Fleet Tracking" HorizontalAlignment="Left" Margin="196,0,0,0" VerticalAlignment="Top" FontFamily="Curlz MT" FontSize="40" Foreground="#FFC3FF00" Height="60" Width="231"/>
+        </Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="198" VerticalAlignment="Top" Height="60" Margin="1,60,1,1" Opacity="0.7">
+            <StackPanel.Background>
+                <SolidColorBrush Color="#FF262D35"/>
+            </StackPanel.Background>
+            <Button  Foreground="{x:Null}" Background="{x:Null}">
+                <StackPanel Orientation="Horizontal" Width="195" Height="46" >
+                    <Label Content="Menu" Background="Transparent" Foreground="White" FontFamily="Tempus Sans ITC" FontSize="24" BorderThickness="10,0,0,0" Margin="0,0,0,1"  VerticalAlignment="Bottom"/>
+                    <Image Source="Resources/list (1).png" Stretch="Fill" Margin="60,4,0,0" Width="48" HorizontalAlignment="Right" Height="41" VerticalAlignment="Top" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" x:Name="sidePanel" HorizontalAlignment="Left" Width="199" Margin="0,120,0,0">
+            <StackPanel.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowFrameColorKey}}" Opacity="0.62"/>
+            </StackPanel.Background>
+
+            <StackPanel Orientation="Horizontal" Height="54" Margin="0,100,0,0">
+                <Grid x:Name="colorGrid" Background="White" Width="12"/>
+                <Button Margin="3,0,0,0" x:Name="btnCaptureV"  Background="{x:Null}" Width="178" >
+                    <StackPanel Orientation="Horizontal" Width="178">
+                        <Image Source="Resources/icon (3).png" Width="57" Stretch="Fill"/>
+                        <Label Content="Capture Vehicle" Margin="10,10,0,0" FontFamily="Yu Gothic UI Light" Background="{x:Null}" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Height="54" Margin="0,20,0,0">
+                <Grid x:Name="colorGrid1" Background="White" Width="12"/>
+                <Button Margin="3,0,0,0" x:Name="btnUpdateV"  Width="177"  Background="{x:Null}">
+                    <StackPanel Orientation="Horizontal" Width="178">
+                        <Image Source="Resources/rotate (2).png" Width="57" Stretch="Fill"/>
+                        <Label Content="Update Vehicle" Margin="10,10,0,0" FontFamily="Yu Gothic UI Light" Background="{x:Null}" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <Line Height="5"/>
+            <StackPanel Orientation="Horizontal" Height="54" Margin="0,20,0,0">
+                <Grid x:Name="colorGrid2" Background="White" Width="12"/>
+                <Button Margin="3,0,0,0"  x:Name="btnDelete" Width="177"   Background="{x:Null}">
+                    <StackPanel Orientation="Horizontal" Width="178">
+                        <Image Source="rubbish-bin-delete-button (2).png" Width="57" Stretch="Fill"/>
+                        <Label Content="Delete Vehicle " Margin="10,10,0,0" FontFamily="Yu Gothic UI Light" Background="{x:Null}" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <Separator Background="Black" Margin="10,40,10,0"/>
+            <StackPanel Orientation="Horizontal" Height="54" Margin="0,5,0,0">
+                <Grid Background="White" Width="12" x:Name="colorGrid3"/>
+                <Button x:Name="btnVehicleReport"  Margin="3,0,0,0"   Width="177"  Background="{x:Null}" >
+                    <StackPanel Orientation="Horizontal" Width="178">
+                        <Image Source="Resources/to-do-list.png" Width="57" Stretch="Fill"/>
+                        <Label Content="Vehicle Report" Margin="10,10,0,0" FontFamily="Yu Gothic UI Light" Background="{x:Null}" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <Separator Background="Black" Margin="10,30,10,0"/>
+            <StackPanel Orientation="Horizontal" Height="54" VerticalAlignment="Bottom">
+                <Grid Background="White" Width="12" x:Name="colorGrid4"/>
+                <Button Margin="3,0,0,0"   Width="177"  Background="{x:Null}">
+                    <StackPanel Orientation="Horizontal" Width="178">
+                        <Image Source="rubbish-bin-delete-button (2).png" Width="57" Stretch="Fill"/>
+                        <Label Content="Settings" Margin="0,10,0,0" FontFamily="Yu Gothic UI Light" Background="{x:Null}" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="199,60,0,0" Height="60">
+            <StackPanel.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlDarkColorKey}}" Opacity="0.53"/>
+            </StackPanel.Background>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="600" Margin="0,5,0,0">
+                <Button Content="Vehicle Report" Width="140" Margin="30,0,0,0"/>
+                <Button Content="Service Report" Width="140" Margin="3,0,0,0"/>
+                <Button Content="Trip Report" Width="140" Margin="3,0,0,0"/>
+                <Button Content="" Width="140" Margin="3,0,0,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="800" Margin="0,5,0,0">
+                <Button Content="Vehicle Report" Width="140" Margin="55,0,0,0"/>
+                <Button Content="Service Report" Width="140" Margin="3,0,0,0"/>
+                <Button Content="Trip Report" Width="140" Margin="3,0,0,0"/>
+                <Button Content="" Width="140" Margin="3,0,0,0"/>
+                <Button Content="" Width="140" Margin="3,0,0,0"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

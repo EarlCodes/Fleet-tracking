@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="FleetDataSet" targetNamespace="http://tempuri.org/FleetDataSet.xsd" xmlns:mstns="http://tempuri.org/FleetDataSet.xsd" xmlns="http://tempuri.org/FleetDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="FleetDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="FleetDataSet" msprop:Generator_UserDSName="FleetDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="VEHICLE" msprop:Generator_TableClassName="VEHICLEDataTable" msprop:Generator_TableVarName="tableVEHICLE" msprop:Generator_TablePropName="VEHICLE" msprop:Generator_RowDeletingName="VEHICLERowDeleting" msprop:Generator_RowChangingName="VEHICLERowChanging" msprop:Generator_RowEvHandlerName="VEHICLERowChangeEventHandler" msprop:Generator_RowDeletedName="VEHICLERowDeleted" msprop:Generator_UserTableName="VEHICLE" msprop:Generator_RowChangedName="VEHICLERowChanged" msprop:Generator_RowEvArgName="VEHICLERowChangeEvent" msprop:Generator_RowClassName="VEHICLERow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="VEHICLE_NUMBER" msprop:Generator_ColumnVarNameInTable="columnVEHICLE_NUMBER" msprop:Generator_ColumnPropNameInRow="VEHICLE_NUMBER" msprop:Generator_ColumnPropNameInTable="VEHICLE_NUMBERColumn" msprop:Generator_UserColumnName="VEHICLE_NUMBER" type="xs:string" minOccurs="0" />
+              <xs:element name="VEHICLE_TYPE" msprop:Generator_ColumnVarNameInTable="columnVEHICLE_TYPE" msprop:Generator_ColumnPropNameInRow="VEHICLE_TYPE" msprop:Generator_ColumnPropNameInTable="VEHICLE_TYPEColumn" msprop:Generator_UserColumnName="VEHICLE_TYPE" type="xs:string" minOccurs="0" />
+              <xs:element name="MANUFACTURER" msprop:Generator_ColumnVarNameInTable="columnMANUFACTURER" msprop:Generator_ColumnPropNameInRow="MANUFACTURER" msprop:Generator_ColumnPropNameInTable="MANUFACTURERColumn" msprop:Generator_UserColumnName="MANUFACTURER" type="xs:string" minOccurs="0" />
+              <xs:element name="ENGINE_SIZE" msprop:Generator_ColumnVarNameInTable="columnENGINE_SIZE" msprop:Generator_ColumnPropNameInRow="ENGINE_SIZE" msprop:Generator_ColumnPropNameInTable="ENGINE_SIZEColumn" msprop:Generator_UserColumnName="ENGINE_SIZE" type="xs:string" minOccurs="0" />
+              <xs:element name="CURRENT_ODOMETER" msprop:Generator_ColumnVarNameInTable="columnCURRENT_ODOMETER" msprop:Generator_ColumnPropNameInRow="CURRENT_ODOMETER" msprop:Generator_ColumnPropNameInTable="CURRENT_ODOMETERColumn" msprop:Generator_UserColumnName="CURRENT_ODOMETER" type="xs:string" minOccurs="0" />
+              <xs:element name="NEXTSERVICE_ODOMETER" msprop:Generator_ColumnVarNameInTable="columnNEXTSERVICE_ODOMETER" msprop:Generator_ColumnPropNameInRow="NEXTSERVICE_ODOMETER" msprop:Generator_ColumnPropNameInTable="NEXTSERVICE_ODOMETERColumn" msprop:Generator_UserColumnName="NEXTSERVICE_ODOMETER" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

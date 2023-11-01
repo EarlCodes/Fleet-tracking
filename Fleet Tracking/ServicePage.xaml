@@ -1,0 +1,159 @@
+﻿<Page x:Class="Fleet_Tracking.ServicePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Fleet_Tracking"
+      mc:Ignorable="d" 
+      Title="ServicePage" Margin="0,0,0,0">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Resources/building-ceiling-door-systems-221047.jpg"/>
+        </Grid.Background>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" x:Name="sidePanel"  Width="199" Margin="0,120,0,0">
+            <StackPanel.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlDarkDarkColorKey}}" Opacity="0.8"/>
+            </StackPanel.Background>
+            <StackPanel Orientation="Horizontal" Height="54" Margin="0,150,0,0">
+                <Grid x:Name="colorGrid" Background="White" Width="12"/>
+                <Button Margin="3,0,0,0" x:Name="btnAppoinment"  Click="BtnAppoinment_Click"  Background="{x:Null}" Width="178">
+                    <StackPanel Orientation="Horizontal" Width="178">
+                        <Image Source="Resources/calendar (6).png" Width="57" Stretch="Fill"/>
+                        <Label Content="Appoinment" Margin="10,10,0,0" FontFamily="Yu Gothic UI Light" Background="{x:Null}" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Height="54" Margin="0,0,0,0">
+                <Grid x:Name="colorGrid1" Background="White" Width="12"/>
+                <Button Margin="3,0,0,0" x:Name="btnDailyJobSheet"   Click="BtnDailyJobSheet_Click"   Background="{x:Null}" Width="178">
+                    <StackPanel Orientation="Horizontal" Width="178">
+                        <Image Source="Resources/look-for-a-job-in-a-newspaper.png" Width="57" Stretch="Fill"/>
+                        <Label Content="Daily Job" Margin="10,10,0,0" FontFamily="Yu Gothic UI Light" Background="{x:Null}" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Height="54" Margin="0,0,0,0">
+                <Grid x:Name="colorGrid2" Background="White" Width="12"/>
+                <Button Margin="3,0,0,0" x:Name="btnCreateProcedure"   Click="BtnProcedure_Click"   Background="{x:Null}" Width="178">
+                    <StackPanel Orientation="Horizontal" Width="178">
+                        <Image Source="Resources/planner.png" Width="57" Stretch="Fill"/>
+                        <Label Content="Procedure" Margin="10,10,0,0" FontFamily="Yu Gothic UI Light" Background="{x:Null}" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <Separator Background="Black" Margin="10,40,10,0"/>
+            <StackPanel Orientation="Horizontal" Height="54" Margin="0,5,0,0">
+                <Grid Background="White" Width="12" x:Name="colorGrid4"/>
+                <Button  Margin="3,0,0,0"   Width="177"  Background="{x:Null}">
+                    <StackPanel Orientation="Horizontal" Width="178">
+                        <Image Source="Resources/to-do-list.png" Width="57" Stretch="Fill"/>
+                        <Label Content="Trip Report" Margin="10,10,0,0" FontFamily="Yu Gothic UI Light" Background="{x:Null}" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+        <Grid VerticalAlignment="Top" Height="60" >
+            <Grid.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowFrameColorKey}}" Opacity="0.7"/>
+            </Grid.Background>
+            <Image x:Name="image" HorizontalAlignment="Left" Height="77" Margin="36,0,0,0" VerticalAlignment="Top" Width="131" Source="Resources/Untitled.png" Stretch="Fill"/>
+            <Label x:Name="label" Content="Fleet Tracking" HorizontalAlignment="Left" Margin="196,0,0,0" VerticalAlignment="Top" FontFamily="Curlz MT" FontSize="40" Foreground="#FFC3FF00" Height="60" Width="231"/>
+        </Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="198" VerticalAlignment="Top" Height="60" Margin="0,60,0,0">
+            <StackPanel.Background>
+                <SolidColorBrush Color="#FF262D35" Opacity="0.7"/>
+            </StackPanel.Background>
+            <Button   Foreground="{x:Null}" Background="{x:Null}">
+                <StackPanel Orientation="Horizontal" Width="195" Height="46" >
+                    <Label Content="Menu" Background="Transparent" Foreground="White" FontFamily="Tempus Sans ITC" FontSize="24" BorderThickness="10,0,0,0" Margin="0,0,0,1"  VerticalAlignment="Bottom"/>
+                    <Image Source="Resources/list (1).png" Stretch="Fill" Margin="60,4,0,0" Width="48" HorizontalAlignment="Right" Height="41" VerticalAlignment="Top" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+        
+        <Grid x:Name="appoinment_scheduled_grid"  Margin="199,60,0,0" Visibility="Hidden">
+            <Grid VerticalAlignment="Top"  Margin="0,0,0,0" Height="60" >
+                <Label Content="Appoinment Scheduling" Margin="0,4,0,0" FontFamily="Tempus Sans ITC" FontSize="30" HorizontalAlignment="Right"  Foreground="#FFC3FF00" />
+            </Grid>
+            <StackPanel Orientation="Vertical" Margin="0,60,0,0">
+                <StackPanel.Background>
+                    <SolidColorBrush Color="#FF262D35" Opacity="0.7"/>
+                </StackPanel.Background>
+                
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="460" Margin="0,100,0,0">
+                    <Label Content="Vehicle Number" FontSize="18" FontFamily="Yu Gothic UI Semilight" Foreground="White"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="440">
+                    <ComboBox x:Name="comboVehicleNumber" Margin="0,0,0,0" Height="24" Width="210"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="460">
+                    <Label Content="Appoinment Date" Margin="0,0,0,0" FontSize="18" FontFamily="Yu Gothic UI Semilight" Foreground="White"/>
+                    <Label Margin="150,0,0,0" Content="Appoinment Time" FontSize="18" FontFamily="Yu Gothic UI Semilight" Foreground="White"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="800">
+                    <DatePicker Margin="180,0,0,0"  Width="210" x:Name="datePicker"/>
+                    <Label Content="H" Foreground="White" Margin="90,0,0,0"/>
+                    <TextBox Margin="1,0,0,0" Width="42" Height="20" x:Name="txtHour" />
+                    <Label Content="M" Foreground="White" Margin="20,0,0,0"/>
+                    <TextBox Margin="1,0,0,0" Width="42" Height="20" x:Name="txtMinute" />
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="460">
+                    <Label Content="Service Id" FontSize="18" FontFamily="Yu Gothic UI Semilight" Foreground="White"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="440">
+                    <ComboBox Margin="0,0,482,0" Height="24" Width="210"  x:Name="comboServiceId"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" Background="Black" Margin="0,100,0,0">
+                    <Button x:Name="btnOkay" Content="Done" Margin="2" Height="35" Click="BtnOkay_Click" Width="264" Background="#FF4EFF00"/>
+                    <Button Content="Clear" Margin="2" Height="35" Width="270" Background="Red" x:Name="btnClear" Click="BtnClear_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+
+        <Grid x:Name="daily_Job_sheet_grid"  Margin="198,120,0,0" Visibility="Hidden">
+            <Grid.Background>
+                <SolidColorBrush Color="#FF262D35" Opacity="0.66"/>
+                </Grid.Background>
+                <Grid VerticalAlignment="Top"  Margin="0,-60,0,0" Height="60" >
+                    <Label Content="Daily Job Sheet" Margin="0,4,0,0" FontFamily="Tempus Sans ITC" FontSize="30" HorizontalAlignment="Right"  Foreground="#FFC3FF00" />
+                </Grid>
+         </Grid>
+
+        <Grid x:Name="procedure_grid"  Margin="198,60,0,0" Visibility="Hidden">
+            <Grid VerticalAlignment="Top"  Margin="0,0,0,0" Height="60" >
+                <Label Content="Procedure Code" Margin="0,4,0,0" FontFamily="Tempus Sans ITC" FontSize="30" HorizontalAlignment="Right"  Foreground="#FFC3FF00" />
+            </Grid>
+            <StackPanel Orientation="Vertical" Margin="0,59,0,0">
+                <StackPanel.Background>
+                    <SolidColorBrush Color="#FF262D35" Opacity="0.74" />
+                </StackPanel.Background>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="250" Margin="0,100,0,0">
+                    <Label Content="Procedure Code" FontSize="18" FontFamily="Yu Gothic UI Semilight" Foreground="White"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="250">
+                    <TextBox Margin="0,0,479,0" x:Name="txtProcedureCode" Height="20" Width="210"  ToolTip="eg EN-20"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="250">
+                    <Label Content="Service Type" FontSize="18" FontFamily="Yu Gothic UI Semilight" Foreground="White" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="250">
+                    <TextBox Margin="0,0,479,0"  x:Name="txtServiceType" Height="20" Width="210" ToolTip="Eg. Fuel leak"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="250">
+                    <Label Content="Description" FontSize="18" FontFamily="Yu Gothic UI Semilight" Foreground="White" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="250">
+                    <TextBox Margin="0,0,479,0" x:Name="txtDescription" Height="20" Width="210" ToolTip="Describe the service to be done" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" Margin="0,100,0,0" Background="Black">
+                    <Button x:Name="btnProcedureOkay" Click="BtnProcedureOkay_Click" Content="Done" Margin="2" Height="35" Width="264" Background="#FF4EFF00"/>
+                    <Button Content="Clear" Margin="2" Height="35" Width="270" Background="Red" x:Name="btnProcedureClear" Click="BtnProcedureClear_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        
+        
+    </Grid>
+</Page>

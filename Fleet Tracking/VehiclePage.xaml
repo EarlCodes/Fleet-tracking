@@ -1,0 +1,222 @@
+﻿<Page x:Class="Fleet_Tracking.VehiclePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Fleet_Tracking"
+      mc:Ignorable="d"
+      Title="VehiclePage" Margin="0,0,0,0" Background="White" >
+
+    <Grid Margin="0,0,0,0" >
+        <Grid.Background>
+            <ImageBrush ImageSource="Resources/aerial-shot-aerial-view-architecture-1427107.jpg"/>
+        </Grid.Background>
+        <Grid x:Name="capture_vehicle_grid" Margin="199,60,0,0" Visibility="Hidden" >
+            <Grid  VerticalAlignment="Top" Height="59" Margin="0,0,1,0" Opacity="07">
+                <Grid.Background>
+                    <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlDarkColorKey}}"/>
+                </Grid.Background>
+                <Label Content="Capture Vehicle" Margin="422,4,4,-4" FontFamily="Tempus Sans ITC" FontSize="30" HorizontalAlignment="Right" Foreground="#FFC3FF00" />
+            </Grid>
+            <StackPanel Background="#FF262D35" Margin="0,59,0,0" Opacity="0.85" >
+                <StackPanel Orientation="Vertical" Margin="0,4,0,0" Height="500" >
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="156,60,359,0" Width="269"  >
+                        <Label Content="Registration number"  Foreground="White"  FontSize="18" FontFamily="Yu Gothic UI Semilight"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"  Height="29" HorizontalAlignment="Center" Margin="164,2,311,0" Width="309">
+                        <TextBox x:Name="txtRegistrationNumber" Margin="0,-5,0,14" Height="20" Width="217" ToolTip="Eg DYT-324-GP"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" Margin="156,15,136,0" Width="492">
+                        <Label Content="Manufacturer" Margin="0,0,0,0" FontSize="18" FontFamily="Yu Gothic UI Semilight" Foreground="White" Width="156"/>
+                        <Label Content="Vehicle Type" Margin="120,0,0,0" FontFamily="Yu Gothic UI Semilight" FontSize="18" Foreground="White"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="164,2,121,0" HorizontalAlignment="Center" Width="499">
+                        <TextBox x:Name="txtManufacturer" Height="20" Width="217" ToolTip="Eg IZUZU ,FORD"/>
+                        <ComboBox x:Name="comboVehicleType" Margin="65,0,0,0" Height="25" Width="210">
+                            <ComboBoxItem Content="Truck/Trailer(Single-Unit Truck Pulling a Trailer)"/>
+                            <ComboBoxItem Content="Truck Tractor(Bobtail)"/>
+                            <ComboBoxItem Content="Tractor/Semi Trailer(One Trailer)"/>
+                            <ComboBoxItem Content="Truck Tractor/Double(Two Trailer)"/>
+                            <ComboBoxItem Content="Truck Tractor/Triple(Three Trailers)"/>
+                            <ComboBoxItem Content="Bus(9-15 seats,including Driver)"/>
+                            <ComboBoxItem Content="Bus(16 or more seats,including Driver)"/>
+                            <ComboBoxItem Content="Single-Unit(2 Axles,6 Tires)"/>
+                            <ComboBoxItem Content="Single-Unit(3 or more Axles)"/>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="157,15,250,0" HorizontalAlignment="Center" Width="377">
+                        <Label Content="Engine Size" Margin="0,0,0,0" FontFamily="Yu Gothic UI Semilight" FontSize="18" Foreground="White"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="164,0,384,0" HorizontalAlignment="Center" Width="236">
+                        <TextBox x:Name="txtEngineSize" Margin="0,2,0,0" Height="20" Width="218" ToolTip="eg 3400 .Degits only"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" Margin="0,25,0,0">
+                        <Label Content="Current Odometer" Margin="0,2,0,0" FontFamily="Yu Gothic UI Semilight" FontSize="18" Foreground="White"/>
+                        <Label Content="Next Service Odometer" Margin="130,0,0,0" FontFamily="Yu Gothic UI Semilight" FontSize="18" Foreground="White"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="164,0,92,0" Width="528">
+                        <TextBox x:Name="txtCurrentOdo" Margin="0,0,0,0" Height="20" Width="217" ToolTip="Eg 12000 .Degits only"/>
+                        <TextBox x:Name="txtNextOdo" Height="20" Width="212" Margin="65,0,0,0" ToolTip="Eg 12000 .Degits Only" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" Margin="0,100,0,0" Background="Black">
+                        <Button x:Name="btnCaptureDone" Content="Done" Margin="2" Height="35" Click="BtnCaptureDone_Click" Width="264" Background="#FF4EFF00"/>
+                        <Button x:Name="btnClear" Content="Clear" Margin="2" Height="35" Width="270" Background="Red" Click="BtnClear_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        <Grid VerticalAlignment="Top" Height="60" >
+            <Grid.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowFrameColorKey}}" Opacity="0.89"/>
+            </Grid.Background>
+            <Image x:Name="image" HorizontalAlignment="Left" Height="77" Margin="36,0,0,0" VerticalAlignment="Top" Width="131" Source="Resources/Untitled.png" Stretch="Fill"/>
+            <Label x:Name="label" Content="Fleet Tracking" HorizontalAlignment="Left" Margin="196,0,0,0" VerticalAlignment="Top" FontFamily="Curlz MT" FontSize="40" Foreground="#FFC3FF00" Height="60" Width="231"/>
+        </Grid>
+
+
+        <Grid x:Name="update_vehicle_grid" Margin="199,60,0,0" Visibility="Hidden" Opacity="0.88">
+            <Grid.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlDarkColorKey}}"/>
+            </Grid.Background>
+            <Grid  VerticalAlignment="Top" Height="60" Margin="0,0,0,0">
+                <Grid.Background>
+                    <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlDarkColorKey}}"/>
+                </Grid.Background>
+                <Label Content="Update Vehicle" Margin="422,4,4,-4" FontFamily="Tempus Sans ITC" FontSize="30" HorizontalAlignment="Right" Foreground="#FFC3FF00" />
+            </Grid>
+            <Grid Margin="0,60,0,0">
+                <Grid.Background>
+                    <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+                </Grid.Background>
+                <Grid VerticalAlignment="Top" Height="62">
+                    <Label Content="Choose a vehicle to Update" HorizontalAlignment="Center" FontFamily="Yu Gothic UI Semilight" FontSize="16" />
+                    <ComboBox HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="comboVehicleOptions" Width="199" Margin="292,33,292,5"/>
+                    <Button x:Name="btnComboSelect" Content="Select" Margin="504,33,135,4" HorizontalAlignment="Center" Width="145" Click="BtnComboSelect_Click"/>
+                </Grid>
+
+                <StackPanel  Orientation="Vertical" Margin="0,65,0,-3">
+                    <StackPanel.Background>
+                        <SolidColorBrush Color="#FF262D35"/>
+                    </StackPanel.Background>
+                    <StackPanel Orientation="Horizontal" Margin="156,60,359,0" Width="269" HorizontalAlignment="Center">
+                        <Label Content="Registration number" Margin="0,0,0,0" FontSize="16" FontFamily="Yu Gothic UI Semilight" Background="{x:Null}" Foreground="White"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Height="29" HorizontalAlignment="Center"  Margin="164,2,311,0" Width="309" >
+                        <TextBox x:Name="txtURegistrationNumber" Margin="0,1,0,0" Height="20" Width="210"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="156,15,136,0" Width="492"  HorizontalAlignment="Center">
+                        <Label Content="Manufacturer" Margin="0,0,0,0" FontSize="16" FontFamily="Yu Gothic UI Semilight" Foreground="White"/>
+                        <Label Content="Vehicle Type" Margin="160,0,0,0" FontFamily="Yu Gothic UI Semilight" FontSize="16" Foreground="White"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="164,2,121,0" Width="499" HorizontalAlignment="Center">
+                        <TextBox x:Name="txtUManufacturer" Margin="0,0,0,0" Height="20" Width="210"/>
+                        <ComboBox x:Name="comboUVehicleType" Margin="50,0,0,0" Height="26" Width="210" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Width="377" Margin="157,15,250,0" HorizontalAlignment="Center">
+                        <Label Content="Engine Size" Margin="0,0,0,0" FontFamily="Yu Gothic UI Semilight" FontSize="16" Foreground="White"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="164,0,384,0" Width="236" HorizontalAlignment="Center">
+                        <TextBox x:Name="txtUEngineSize" Margin="0,0,0,0" Height="20" Width="210"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="157,25,174,0" HorizontalAlignment="Center" Width="453">
+                        <Label Content="Current Odometer" Margin="0,0,0,0" FontFamily="Yu Gothic UI Semilight" FontSize="16" Foreground="White"/>
+                        <Label Content="Next Service Odometer" Margin="130,0,0,0" FontFamily="Yu Gothic UI Semilight" FontSize="16" Foreground="White"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="164,0,92,0" Width="528" HorizontalAlignment="Center">
+                        <TextBox x:Name="txtUCurrentOdo" Margin="0,0,0,0" Height="20" Width="210"/>
+                        <TextBox x:Name="txtUNextOdo" Height="20" Width="210" Margin="51,0,0,0"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" Margin="0,100,0,0" Background="Black">
+                        <Button x:Name="btnUDone" Content="Update" Margin="2" Height="35"  Width="264" Background="#FF4EFF00" Click="BtnUDone_Click"/>
+                        <Button x:Name="btnUClear"  Content="Clear" Margin="2" Height="35" Width="270" Background="Red" Click="BtnUClear_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+        <Grid x:Name="delete_vehicle_grid" Margin="199,60,0,0" Visibility="Hidden" Opacity="0.89">
+            <Grid.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlDarkColorKey}}"/>
+            </Grid.Background>
+            <Label Content="Delete Vehicle" FontFamily="Tempus Sans ITC" FontSize="30" HorizontalAlignment="Right" Foreground="#FFC3FF00" Margin="0,0,0,0" />
+            <Grid Margin="0,59,0,0">
+                <Grid.Background>
+                    <SolidColorBrush Color="#FF262D35"/>
+                </Grid.Background>
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                    <Label Content="Select Vehicle to delete"  VerticalAlignment="Center" FontFamily="Yu Gothic UI Semilight" FontSize="16"  Foreground="White" Height="28" Margin="30,50,0,0"/>
+                    <ComboBox Name="cbCarsDelete" VerticalAlignment="Center"  Width="239" Margin="0,10,0,0"/>
+                    <Button x:Name="btnDeleteV" Content="Delete Vehicle"  VerticalAlignment="Center"   Click="BtnDeleteV_Click" Width="239" Height="32" Margin="0,10,0,0"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="198" VerticalAlignment="Top" Height="60" Margin="1,60,1,1" Opacity="0.7">
+            <StackPanel.Background>
+                <SolidColorBrush Color="#FF262D35"/>
+            </StackPanel.Background>
+            <Button Click="Button_Click" Foreground="{x:Null}" Background="{x:Null}">
+                <StackPanel Orientation="Horizontal" Width="195" Height="46" >
+                    <Label Content="Menu" Background="Transparent" Foreground="White" FontFamily="Tempus Sans ITC" FontSize="24" BorderThickness="10,0,0,0" Margin="0,0,0,1"  VerticalAlignment="Bottom"/>
+                    <Image Source="Resources/list (1).png" Stretch="Fill" Margin="60,4,0,0" Width="48" HorizontalAlignment="Right" Height="41" VerticalAlignment="Top" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" x:Name="sidePanel" HorizontalAlignment="Left" Width="199" Margin="0,120,0,0">
+            <StackPanel.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowFrameColorKey}}" Opacity="0.89"/>
+            </StackPanel.Background>
+
+            <StackPanel Orientation="Horizontal" Height="54" Margin="0,100,0,0">
+                <Grid x:Name="colorGrid" Background="White" Width="12"/>
+                <Button Margin="3,0,0,0" x:Name="btnCaptureV"  Background="{x:Null}" Width="178" Click="BtnCaptureV_Click">
+                    <StackPanel Orientation="Horizontal" Width="178">
+                        <Image Source="Resources/trucking.png" Width="57" Stretch="Fill"/>
+                        <Label Content="Capture Vehicle" Margin="10,10,0,0" FontFamily="Yu Gothic UI Light" Background="{x:Null}" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Height="54" Margin="0,20,0,0">
+                <Grid x:Name="colorGrid1" Background="White" Width="12"/>
+                <Button Margin="3,0,0,0" x:Name="btnUpdateV"  Width="177" Click="BtnUpdateV_Click" Background="{x:Null}">
+                    <StackPanel Orientation="Horizontal" Width="178">
+                        <Image Source="Resources/rotate (2).png" Width="57" Stretch="Fill"/>
+                        <Label Content="Update Vehicle" Margin="10,10,0,0" FontFamily="Yu Gothic UI Light" Background="{x:Null}" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <Line Height="5"/>
+            <StackPanel Orientation="Horizontal" Height="54" Margin="0,20,0,0">
+                <Grid x:Name="colorGrid2" Background="White" Width="12"/>
+                <Button Margin="3,0,0,0"  x:Name="btnDelete" Width="177" Click="BtnDeleteV_Click"  Background="{x:Null}">
+                    <StackPanel Orientation="Horizontal" Width="178">
+                        <Image Source="rubbish-bin-delete-button (2).png" Width="57" Stretch="Fill"/>
+                        <Label Content="Delete Vehicle " Margin="10,10,0,0" FontFamily="Yu Gothic UI Light" Background="{x:Null}" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <Separator Background="Black" Margin="10,40,10,0"/>
+            <StackPanel Orientation="Horizontal" Height="54" Margin="0,5,0,0">
+                <Grid Background="White" Width="12" x:Name="colorGrid3"/>
+                <Button x:Name="btnVehicleReport"  Margin="3,0,0,0"   Width="177"  Background="{x:Null}" Click="BtnVehicleReport_Click">
+                    <StackPanel Orientation="Horizontal" Width="178">
+                        <Image Source="Resources/to-do-list.png" Width="57" Stretch="Fill"/>
+                        <Label Content="Vehicle Report" Margin="10,10,0,0" FontFamily="Yu Gothic UI Light" Background="{x:Null}" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <Separator Background="Black" Margin="10,30,10,0"/>
+            <StackPanel Orientation="Horizontal" Height="54" VerticalAlignment="Bottom">
+                <Grid Background="White" Width="12" x:Name="colorGrid4"/>
+                <Button Margin="3,0,0,0"   Width="177"  Background="{x:Null}">
+                    <StackPanel Orientation="Horizontal" Width="178">
+                        <Image Source="rubbish-bin-delete-button (2).png" Width="57" Stretch="Fill"/>
+                        <Label Content="Settings" Margin="0,10,0,0" FontFamily="Yu Gothic UI Light" Background="{x:Null}" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+
+</Page>

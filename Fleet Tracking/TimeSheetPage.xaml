@@ -1,0 +1,96 @@
+﻿<Page x:Class="Fleet_Tracking.TimeSheetPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Fleet_Tracking"
+      mc:Ignorable="d" 
+      Title="TimeSheetPage" Margin="0,0,0,0">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Resources/auto-automobile-automotive-919073.jpg"/>
+        </Grid.Background>
+        <Grid VerticalAlignment="Top" Height="60" >
+            <Grid.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowFrameColorKey}}" Opacity="0.53"/>
+            </Grid.Background>
+            <Image x:Name="image" HorizontalAlignment="Left" Height="77" Margin="36,0,0,0" VerticalAlignment="Top" Width="131" Source="Resources/Untitled.png" Stretch="Fill"/>
+            <Label x:Name="label" Content="Fleet Tracking" HorizontalAlignment="Left" Margin="196,0,0,0" VerticalAlignment="Top" FontFamily="Curlz MT" FontSize="40" Foreground="#FFC3FF00" Height="60" Width="231"/>
+        </Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="198" VerticalAlignment="Top" Height="60" Margin="0,60,0,0">
+            <StackPanel.Background>
+                <SolidColorBrush Color="#FF262D35" Opacity="0.7"/>
+            </StackPanel.Background>
+            <Button   Foreground="{x:Null}" Background="{x:Null}">
+                <StackPanel Orientation="Horizontal" Width="195" Height="46" >
+                    <Label Content="Menu" Background="Transparent" Foreground="White" FontFamily="Tempus Sans ITC" FontSize="24" BorderThickness="10,0,0,0" Margin="0,0,0,1"  VerticalAlignment="Bottom"/>
+                    <Image Source="Resources/list (1).png" Stretch="Fill" Margin="60,4,0,0" Width="48" HorizontalAlignment="Right" Height="41" VerticalAlignment="Top" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" x:Name="sidePanel" HorizontalAlignment="Left" Width="199" Margin="0,120,0,0">
+            <StackPanel.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowFrameColorKey}}" Opacity="0.785"/>
+            </StackPanel.Background>
+            <StackPanel Orientation="Horizontal" Height="54" Margin="0,100,0,0">
+                <Grid x:Name="colorGrid" Background="White" Width="12"/>
+                <Button  x:Name="btnRecordHours"  Background="{x:Null}" Width="178" Click="BtnRecordHours_Click" >
+                    <StackPanel Orientation="Horizontal" Width="178">
+                        <Image Source="Resources/icon (3).png" Width="57" Stretch="Fill"/>
+                        <Label Content="Record Hours" Margin="7,10,0,0" FontFamily="Yu Gothic UI Light" Background="{x:Null}" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+
+            <Separator Background="Black" Margin="10,40,10,0"/>
+            <StackPanel Orientation="Horizontal" Height="54" Margin="0,5,0,0">
+                <Grid Background="White" Width="12" x:Name="colorGrid4"/>
+                <Button   Margin="3,0,0,0"   Width="177"  Background="{x:Null}">
+                    <StackPanel Orientation="Horizontal" Width="178">
+                        <Image Source="Resources/to-do-list.png" Width="57" Stretch="Fill"/>
+                        <Label Content="Trip Report" Margin="10,10,0,0" FontFamily="Yu Gothic UI Light" Background="{x:Null}" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+
+
+        <Grid x:Name="record_mechanic_grid" Visibility="Visible"  Margin="198,60,0,0">
+            <Grid VerticalAlignment="Top" Height="59" >
+                <Label Content="Hours Worked" Margin="0,4,0,0" FontFamily="Tempus Sans ITC" FontSize="30" HorizontalAlignment="Right"  Foreground="#FFC3FF00" />
+            </Grid>
+            <StackPanel Orientation="Vertical" Margin="0,60,0,0" >
+                <StackPanel.Background>
+                    <SolidColorBrush Color="#FF262D35" Opacity="0.845"/>
+                </StackPanel.Background>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="250" Margin="0,100,0,0">
+                    <Label Content="Employee Id" Margin="10,10,0,0" FontSize="18" FontFamily="Yu Gothic UI Semilight" Foreground="White" Background="{x:Null}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox Margin="0,0,0,0" Height="20" Width="210" x:Name="txtAppoinmentNo" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="250">
+                    <Label Content="Employee Type" Margin="10,10,0,0" FontSize="18" FontFamily="Yu Gothic UI Semilight" Foreground="White" Background="{x:Null}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="230">
+                    <ComboBox Margin="10,10,0,0" FontFamily="Yu Gothic UI Light" Background="{x:Null}" Foreground="White" Width="207" Height="21">
+                        <ComboBoxItem Content="Mechanic"/>
+                        <ComboBoxItem Content="Driver"/>
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="250">
+                    <Label Content="Hours Worked" Margin="10,10,0,0" FontSize="18" FontFamily="Yu Gothic UI Semilight" Foreground="White" Background="{x:Null}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBox Margin="0,0,0,0" Height="20" Width="210" Foreground="Black" x:Name="txtHoursWorked"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" Background="Black" Margin="0,100,0,0">
+                    <Button  Content="Done" Margin="2" x:Name="btnDone" Height="35"  Width="264" Background="#FF4EFF00" Click="BtnDone_Click"/>
+                    <Button Content="Clear" Margin="2" Height="35" Width="270" Background="Red" x:Name="btnClear" Click="BtnClear_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+</Page>
